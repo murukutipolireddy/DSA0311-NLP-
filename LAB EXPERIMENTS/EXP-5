@@ -1,0 +1,21 @@
+
+from nltk.stem import PorterStemmer
+
+# Create Porter Stemmer object
+porter = PorterStemmer()
+
+words = [
+    "playing",
+    "played",
+    "plays",
+    "connected",
+    "connection",
+    "running",
+    "happiness",
+    "studies"
+]
+
+print("Word -> Stem")
+
+for word in words:
+    print(word, "->", porter.stem(word))
