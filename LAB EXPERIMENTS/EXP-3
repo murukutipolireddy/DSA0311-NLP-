@@ -1,0 +1,19 @@
+
+import nltk
+from nltk.stem import PorterStemmer
+from nltk.tokenize import wordpunct_tokenize
+
+# Create a stemmer
+stemmer = PorterStemmer()
+
+text = "The cats are playing and the dogs are running."
+
+# Tokenize the text
+words = wordpunct_tokenize(text)
+
+print("Original words and their stems:")
+
+for word in words:
+    if word.isalpha():
+        stem = stemmer.stem(word)
+        print(word, "->", stem)
