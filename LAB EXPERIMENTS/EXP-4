@@ -1,0 +1,21 @@
+
+def pluralize(noun):
+    # Rule 1: nouns ending in s, x, z, ch, or sh
+    if noun.endswith(("s", "x", "z", "ch", "sh")):
+        return noun + "es"
+
+    # Rule 2: consonant + y changes to ies
+    elif noun.endswith("y") and len(noun) > 1:
+        if noun[-2].lower() not in "aeiou":
+            return noun[:-1] + "ies"
+
+    # Rule 3: default plural rule
+    return noun + "s"
+
+
+nouns = ["cat", "dog", "box", "bus", "baby", "dish"]
+
+print("Singular -> Plural")
+
+for noun in nouns:
+    print(noun, "->", pluralize(noun))
